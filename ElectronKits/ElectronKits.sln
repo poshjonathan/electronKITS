@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronKits", "Assembly-CSharp.csproj", "{CFAE411F-4508-5A77-9457-C3703BC4CD0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronKits", "Assembly-CSharp-Editor.csproj", "{2372D745-6FF7-D796-D72D-D74318B1C4AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFAE411F-4508-5A77-9457-C3703BC4CD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAE411F-4508-5A77-9457-C3703BC4CD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAE411F-4508-5A77-9457-C3703BC4CD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAE411F-4508-5A77-9457-C3703BC4CD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2372D745-6FF7-D796-D72D-D74318B1C4AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2372D745-6FF7-D796-D72D-D74318B1C4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2372D745-6FF7-D796-D72D-D74318B1C4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2372D745-6FF7-D796-D72D-D74318B1C4AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

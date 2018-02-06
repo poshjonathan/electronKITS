@@ -1,0 +1,19 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: AA battery
+Author: Poly by Google
+URL: https://poly.google.com/view/2TKK0wpiWPw
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Bulb
+Author: Justin Randall
+URL: https://poly.google.com/view/8Px7hO6zcfg
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Keg
+Author: Poly by Google
+URL: https://poly.google.com/view/eaP9ogrSQFQ
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode

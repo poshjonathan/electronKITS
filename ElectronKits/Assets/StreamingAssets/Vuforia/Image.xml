@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="smallBattery" size="10.000000 7.182609" />
+    <ImageTarget name="smallBulb" size="10.000000 7.187500" />
+    <ImageTarget name="smallResistor" size="10.000000 7.027027" />
+    <ImageTarget name="1k_resistorCard" size="10.000000 13.750000" />
+    <ImageTarget name="BatteryCard" size="10.000000 13.870968" />
+    <ImageTarget name="colorCodeCardV2" size="10.000000 13.979239" />
+    <ImageTarget name="resistorColorCodeTutorialCard" size="10.000000 13.548388" />
+    <ImageTarget name="colorCodeCard" size="10.000000 14.090909" />
+    <ImageTarget name="1_5K_ResistorCard" size="10.000000 13.846154" />
+    <ImageTarget name="22K_ResistorCard" size="10.000000 13.750000" />
+    <ImageTarget name="Resistor_Card_1" size="10.000000 14.000000" />
+    <ImageTarget name="Battery_Card_1" size="10.000000 14.117647" />
+  </Tracking>
+</QCARConfig>
