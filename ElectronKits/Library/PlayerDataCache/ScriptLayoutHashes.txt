@@ -137,7 +137,6 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 215f21c984a05428dd33c8419e0a1c57 Assembly-CSharp.dll:Vuforia.SurfaceBehaviour
 adfeb2d4dce67fa11fe442ef46df0054 Assembly-CSharp.dll:.ShortestLineScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.loadsceneonclick
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.string_database
 c1465577256149eb2fdaaf3754ab7da9 Assembly-CSharp.dll:.TiltWindow
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
