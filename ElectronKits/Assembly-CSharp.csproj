@@ -115,10 +115,7 @@
      <Compile Include="Assets\Scripts\LightingExperiment.cs" />
      <Compile Include="Assets\Scripts\lineRendererTest.cs" />
      <Compile Include="Assets\Scripts\loadsceneonclick.cs" />
-     <Compile Include="Assets\Scripts\MobileCam.cs" />
-     <Compile Include="Assets\Scripts\MobileCam2.cs" />
      <Compile Include="Assets\Scripts\ResistorTutorial.cs" />
-     <Compile Include="Assets\Scripts\ShortestLineScript.cs" />
      <Compile Include="Assets\Scripts\show_option.cs" />
      <Compile Include="Assets\Scripts\similar.cs" />
      <Compile Include="Assets\Scripts\textBoxText.cs" />

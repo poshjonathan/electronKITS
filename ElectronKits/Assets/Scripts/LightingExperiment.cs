@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/*
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,6 +64,7 @@ public class LightingExperiment : MonoBehaviour {
 		localStyle.fontSize = 70;
 		GUI.Label(new Rect(20, 50, Screen.width - 20, 30), gguiText + " CM ", localStyle);
 	}
-*/
+
 	
 }
+*/

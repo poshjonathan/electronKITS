@@ -39,14 +39,31 @@ public class lineRendererTest : MonoBehaviour {
 	public GameObject goParticle;
 	public ParticleSystem bulbParticle;
 	public Material bulbParticleMaterial,bulbParticleTrailMaterial;
-	public int bulbElements;
+	private int bulbElements,bulbElementsOld;
 
 	private GameObject human;
 	private float vector3test;
 	private bool playStatus;
+	public Text showCurrentPlayStatus;
 
 	private int targetIndex;
 	private Vector3[] markers;
+
+	public Button particleTriggerBtn;
+	private bool particleTriggerStatus = false;
+	public Text showParticleTriggerStatus;
+	public Sprite playSprite;
+	public Sprite pauseSprite;
+
+	public Button increaseVoltsBtn, decreaseVoltsBtn;
+	private float batteryVoltsValue = 3f;
+	public Text showBatteryVolts;
+	private int batteryElement = 3;
+	private int batteryElementOld;
+
+	private float step = 0f;
+
+	public Text showResistanceValue, showVoltageValue, showCurrentValue;
 
 	//public GameObject lineObject = new GameObject("Line");
 
@@ -91,11 +108,6 @@ public class lineRendererTest : MonoBehaviour {
 		resistorValue_Counter = 10;
 		bulbElements = 3;
 
-		increaseBtn.onClick.AddListener(TaskOnIncreaseClick);
-		decreaseBtn.onClick.AddListener(TaskOnDecreaseClick);
-		playBtn.onClick.AddListener(TaskOnPlayClick);
-
-
 		//Particle System
 		goParticle = GameObject.Find("ParticleSystemObj");
 		bulbParticle = goParticle.AddComponent<ParticleSystem>();
@@ -119,26 +131,27 @@ public class lineRendererTest : MonoBehaviour {
 
 		bulbParticle.GetComponent<ParticleSystemRenderer>().material = bulbParticleMaterial;
 
-		/*
-		var particleTrail = bulbParticle.trails;
-		particleTrail.ratio = 1;
-		particleTrail.lifetime = 1;
-		particleTrail.minVertexDistance = 0.6f;
-		particleTrail.textureMode = ParticleSystemTrailTextureMode.Stretch;
-		particleTrail.dieWithParticles = true;
-		particleTrail.sizeAffectsWidth = true;
-		particleTrail.widthOverTrail = 0.12f;
-		//particleTrail.colorOverTrail = grad;
-		bulbParticle.GetComponent<ParticleSystemRenderer>().trailMaterial= bulbParticleTrailMaterial;
-		particleTrail.enabled = true;
-		*/
-
 		var asdf = bulbParticle.emission;
 		asdf.rateOverTime = 100;
 
 		//Human
 		human = GameObject.Find("common_people@run");
 		//human.transform.position = resistorRightSphere.transform.position;
+
+		//Show play button (initialise)
+		particleTriggerBtn.image.sprite = playSprite;
+
+		//Show pause button (initialise)
+		playBtn.image.sprite = playSprite;
+
+		//Click listener
+		increaseBtn.onClick.AddListener(TaskOnIncreaseClick);
+		decreaseBtn.onClick.AddListener(TaskOnDecreaseClick);
+		playBtn.onClick.AddListener(TaskOnPlayClick);
+		particleTriggerBtn.onClick.AddListener(TaskOnParticleTriggerPlayClick);
+		increaseVoltsBtn.onClick.AddListener(TaskOnIncreaseVoltsClick);
+		decreaseVoltsBtn.onClick.AddListener(TaskOnDecreaseVoltsClick);
+
 
 	}
 
@@ -407,6 +420,7 @@ public class lineRendererTest : MonoBehaviour {
 
 		}
 
+		//Handle siuation when the circuit is complete
 		if ((sBulbRight_BatteryLeft == true && sBatteryRight_ResistorRight == true && sBulbLeft_ResistorLeft == true) ||
 			(sBulbLeft_BatteryLeft == true && sBatteryRight_ResistorRight == true && sBulbRight_ResistorLeft == true) ||
 			(sBulbRight_BatteryRight == true && sBatteryLeft_ResistorRight == true && sBulbLeft_ResistorLeft == true) ||
@@ -417,28 +431,28 @@ public class lineRendererTest : MonoBehaviour {
 			(sBulbRight_BatteryRight == true && sBatteryLeft_ResistorLeft == true && sBulbRight_ResistorRight == true) ||
 			(sBulbRight_BatteryRight == true && sBatteryLeft_ResistorLeft == true && sBulbLeft_ResistorRight == true))
 		{
-			bulbLighting.enabled = true;
-			bulbLighting.type = LightType.Point;
-			bulbLighting.intensity = bulbElements * 3;
-			bulbLighting.range = 200f;
-			bulbLighting.shadows = LightShadows.Hard;
 
 			var particleMain = bulbParticle.main;
 			particleMain.duration = 7;
 			particleMain.loop = true;
 			particleMain.startLifetime = new ParticleSystem.MinMaxCurve(2f, 7f);
 			particleMain.startSize = new ParticleSystem.MinMaxCurve(0.1f, 0.5f);
-			particleMain.maxParticles = bulbElements * 40;
-			particleMain.simulationSpeed = bulbElements;
+			particleMain.maxParticles = (bulbElements+batteryElement) * 40;
+			particleMain.simulationSpeed = (bulbElements+batteryElement);
 
-			var asdf = bulbParticle.emission;
-			asdf.rateOverTime = bulbElements * 40;
+			bulbLighting.enabled = true;
+			bulbLighting.type = LightType.Point;
+			bulbLighting.intensity = (bulbElements+batteryElement) * 3;
+			bulbLighting.range = 200f;
+			bulbLighting.shadows = LightShadows.Hard;
 
 			playBtn.interactable = true;
 
+			particleTriggerBtn.interactable = true;
 
 		}
 
+		//Handle situation when the circuit is not complete
 		else
 		{
 			bulbLighting.enabled = false;
@@ -447,6 +461,13 @@ public class lineRendererTest : MonoBehaviour {
 			asdf.rateOverTime = 0;
 
 			playBtn.interactable = false;
+			playStatus = false;
+			playBtn.image.sprite = pauseSprite;
+
+			particleTriggerBtn.interactable = false;
+			particleTriggerStatus = false;
+			particleTriggerBtn.image.sprite = pauseSprite;
+
 		}
 
 		//Human Walking
@@ -561,12 +582,37 @@ public class lineRendererTest : MonoBehaviour {
 
 			human.transform.position = Vector3.MoveTowards(human.transform.position, markers[0], 0.3f);
 			human.GetComponent<Animation>().Stop();
+
+			playBtn.image.sprite = playSprite;
+			showCurrentPlayStatus.text = "OFF";
+
+
 		}
 		if (playStatus == true )
 		{
+			
 			human.GetComponent<Animation>().Play();
+			showCurrentPlayStatus.text = "ON";
+			/*
+			if (batteryElementOld != batteryElement)
+			{
+				batteryElementOld = batteryElement;
+				float speedBattery = batteryElement * 2f;
+				step = speedBattery * Time.deltaTime;
+			}
 
-			human.transform.position = Vector3.MoveTowards(human.transform.position, markers[targetIndex], 0.3f);
+			if (bulbElementsOld != bulbElements)
+			{
+				bulbElementsOld = bulbElements;
+				float speedResistor = batteryElement * 2f;
+				step = speedResistor * Time.deltaTime;
+			}*/
+
+			float speed = (batteryElement + bulbElements) * 2f;
+			step = speed * Time.deltaTime;
+
+
+			human.transform.position = Vector3.MoveTowards(human.transform.position, markers[targetIndex], step);
 			human.transform.LookAt(markers[targetIndex]);
 			if (human.transform.position == markers[targetIndex])
 			{
@@ -576,7 +622,37 @@ public class lineRendererTest : MonoBehaviour {
 			{
 				targetIndex = 0;
 			}
+
+			playBtn.image.sprite = pauseSprite;
 		}
+
+
+		//Particle trigger button
+		if (particleTriggerStatus == true)
+		{
+
+			//Start particle animation
+
+			var asdf = bulbParticle.emission;
+			asdf.rateOverTime = bulbElements * 40;
+			showParticleTriggerStatus.text = "ON";
+
+			particleTriggerBtn.image.sprite = pauseSprite;
+
+		}
+
+		if (particleTriggerStatus == false)
+		{
+
+			var asdf = bulbParticle.emission;
+			asdf.rateOverTime = 0;
+			showParticleTriggerStatus.text = "OFF";
+
+			particleTriggerBtn.image.sprite = playSprite;
+		}
+
+
+		updateAllValues();
 
 	}
 
@@ -586,7 +662,7 @@ public class lineRendererTest : MonoBehaviour {
 		resistorValue_Counter=resistorValue_Counter+5;
 		bulbElements--;
 
-		if (bulbElements < 1|| resistorValue_Counter > 20)
+		if (resistorValue_Counter > 20)
 		{
 			resistorValue_Counter = 20;
 			bulbElements = 1;
@@ -599,7 +675,7 @@ public class lineRendererTest : MonoBehaviour {
 		else
 		{
 			decreaseBtn.interactable = true;
-			showCounterText.text = resistorValue_Counter.ToString()+"k"; 
+			showCounterText.text = resistorValue_Counter.ToString()+"k";
 		}
 
 
@@ -618,7 +694,7 @@ public class lineRendererTest : MonoBehaviour {
 
 			
 
-		if (resistorValue_Counter <0 || bulbElements >5)
+		if (resistorValue_Counter <0)
 		{ 
 			resistorValue_Counter = 0;
 			bulbElements = 5;
@@ -628,7 +704,7 @@ public class lineRendererTest : MonoBehaviour {
 		}
 
 		else {
-			
+
 			increaseBtn.interactable = true;
 			showCounterText.text = resistorValue_Counter.ToString()+"k"; 
 		}
@@ -643,5 +719,59 @@ public class lineRendererTest : MonoBehaviour {
 		playStatus = !playStatus;
 
 	}
+
+
+	void TaskOnParticleTriggerPlayClick()
+	{
+		particleTriggerStatus = !particleTriggerStatus;
+
+	}
+
+	void TaskOnIncreaseVoltsClick()
+	{
+		batteryVoltsValue = batteryVoltsValue + 1.5f;
+		batteryElement++;
+
+		if (batteryVoltsValue > 6)
+		{
+			batteryElement = 5;
+			batteryVoltsValue = 6;
+			increaseVoltsBtn.interactable = false;
+
+		}
+		else
+		{
+			decreaseVoltsBtn.interactable = true;
+			showBatteryVolts.text = batteryVoltsValue.ToString() + "v";
+		}
+
+	}
+
+	void TaskOnDecreaseVoltsClick()
+	{
+		batteryVoltsValue = batteryVoltsValue - 1.5f;
+		batteryElement--;
+
+		if (batteryVoltsValue < 0)
+		{
+			batteryElement = 0;
+			batteryVoltsValue = 0;
+			decreaseVoltsBtn.interactable = false;
+		}
+		else
+		{
+			increaseVoltsBtn.interactable = true;
+			showBatteryVolts.text = batteryVoltsValue.ToString() + "v";
+		}
+	}
+
+	void updateAllValues()
+	{
+
+		showVoltageValue.text = batteryVoltsValue.ToString() + "V";
+		showResistanceValue.text = resistorValue_Counter.ToString() + "k";
+
+	}
+
 
 }

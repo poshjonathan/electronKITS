@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/*
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -103,3 +105,4 @@ string gguiText2 = "";
 		GUI.Label(new Rect(50,40,40,40), gguiText2 + " CM ", localStyle);
 	}
 }
+*/
