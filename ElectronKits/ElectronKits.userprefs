@@ -1,10 +1,10 @@
-﻿<Properties StartupConfiguration="{2372D745-6FF7-D796-D72D-D74318B1C4AC}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia/Scripts/VuforiaBehaviour.cs">
+﻿<Properties StartupConfiguration="{CFAE411F-4508-5A77-9457-C3703BC4CD0B}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/lineRendererTest.cs">
     <Files>
-      <File FileName="Assets/Scripts/lineRendererTest.cs" Line="768" Column="22" />
-      <File FileName="Assets/Scripts/ResistorTutorial.cs" Line="116" Column="25" />
-      <File FileName="Assets/Scripts/vb5Band.cs" Line="27" Column="64" />
-      <File FileName="Assets/Scripts/vbBack.cs" Line="17" Column="3" />
+      <File FileName="Assets/Scripts/lineRendererTest.cs" Line="39" Column="2" />
+      <File FileName="Assets/Scripts/vb_A.cs" Line="38" Column="29" />
+      <File FileName="Assets/Scripts/ResistorTutorial.cs" Line="267" Column="4" />
       <File FileName="Assets/colorPicker.cs" Line="34" Column="4" />
       <File FileName="Assets/Scripts/LightingExperiment.cs" Line="67" Column="1" />
       <File FileName="Assets/Vuforia/Scripts/VuforiaBehaviour.cs" Line="83" Column="1" />
@@ -15,6 +15,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

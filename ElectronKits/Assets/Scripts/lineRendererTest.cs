@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
 
-public class lineRendererTest : MonoBehaviour {
+public class lineRendererTest : MonoBehaviour
+{
 
-	private GameObject BulbResistorline,BulbBatteryline,BatteryResistorline;
+	private GameObject BulbResistorline, BulbBatteryline, BatteryResistorline;
 
-	private LineRenderer BRline,BBattline,BattRline;
+	private LineRenderer BRline, BBattline, BattRline;
 
 	public GameObject batteryRightSphere, batteryLeftSphere;
 	public GameObject resistorRightSphere, resistorLeftSphere;
@@ -32,14 +33,14 @@ public class lineRendererTest : MonoBehaviour {
 	private GameObject goLighting;
 	Light bulbLighting;
 
-	public Button increaseBtn, decreaseBtn,playBtn;
-	public int resistorValue_Counter;
+	public Button increaseBtn, decreaseBtn, playBtn;
+	private float resistorValue_Counter;
 	public Text showCounterText;
 
-	public GameObject goParticle;
+	private GameObject goParticle;
 	public ParticleSystem bulbParticle;
-	public Material bulbParticleMaterial,bulbParticleTrailMaterial;
-	private int bulbElements,bulbElementsOld;
+	public Material bulbParticleMaterial, bulbParticleTrailMaterial;
+	private int bulbElements, bulbElementsOld;
 
 	private GameObject human;
 	private float vector3test;
@@ -65,12 +66,23 @@ public class lineRendererTest : MonoBehaviour {
 
 	public Text showResistanceValue, showVoltageValue, showCurrentValue;
 
+	private float currentValue;
+
+	public ParticleSystem explosionEffect;
+
+	public TextMesh humanCurrentValue;
+
+	public Text overcurrentText;
 	//public GameObject lineObject = new GameObject("Line");
+
+	public GameObject explainPanel;
+
+	public AudioSource overcurrentSpeech;
 
 	// Use this for initialization
 	void Start()
 	{
-
+		
 		BulbResistorline = GameObject.Find("BulbResistor");
 		BRline = BulbResistorline.AddComponent<LineRenderer>();
 		BRline.enabled = false;
@@ -105,7 +117,7 @@ public class lineRendererTest : MonoBehaviour {
 		bulbLighting = goLighting.AddComponent<Light>();
 
 		//increaseBtn = GameObject.FindGameObjectWithTag("IncreaseButton").GetComponent<Button>();
-		resistorValue_Counter = 10;
+		resistorValue_Counter = 10f;
 		bulbElements = 3;
 
 		//Particle System
@@ -144,8 +156,17 @@ public class lineRendererTest : MonoBehaviour {
 		//Show pause button (initialise)
 		playBtn.image.sprite = playSprite;
 
+		explainPanel.SetActive(false);
+	
+		if (overcurrentSpeech.isPlaying)
+		{
+			overcurrentSpeech.Stop();
+		}
+	
+
+
 		//Click listener
-		increaseBtn.onClick.AddListener(TaskOnIncreaseClick);
+			increaseBtn.onClick.AddListener(TaskOnIncreaseClick);
 		decreaseBtn.onClick.AddListener(TaskOnDecreaseClick);
 		playBtn.onClick.AddListener(TaskOnPlayClick);
 		particleTriggerBtn.onClick.AddListener(TaskOnParticleTriggerPlayClick);
@@ -437,14 +458,23 @@ public class lineRendererTest : MonoBehaviour {
 			particleMain.loop = true;
 			particleMain.startLifetime = new ParticleSystem.MinMaxCurve(2f, 7f);
 			particleMain.startSize = new ParticleSystem.MinMaxCurve(0.1f, 0.5f);
-			particleMain.maxParticles = (bulbElements+batteryElement) * 40;
-			particleMain.simulationSpeed = (bulbElements+batteryElement);
+			particleMain.maxParticles = (bulbElements + batteryElement) * 40;
+			particleMain.simulationSpeed = (bulbElements + batteryElement);
 
-			bulbLighting.enabled = true;
-			bulbLighting.type = LightType.Point;
-			bulbLighting.intensity = (bulbElements+batteryElement) * 3;
-			bulbLighting.range = 200f;
-			bulbLighting.shadows = LightShadows.Hard;
+			if (resistorValue_Counter.Equals(0))
+			{
+				bulbLighting.enabled = false;
+                 
+			}
+			else
+			{
+				bulbLighting.enabled = true;
+				bulbLighting.type = LightType.Point;
+				bulbLighting.intensity = (bulbElements + batteryElement) * 1.2f;
+				bulbLighting.range = 200f;
+				bulbLighting.shadows = LightShadows.Hard;
+
+			}
 
 			playBtn.interactable = true;
 
@@ -527,7 +557,7 @@ public class lineRendererTest : MonoBehaviour {
 
 			if (sBulbLeft_ResistorLeft == true)
 			{
-				markers[3] =bulbLeftSphere.transform.position;
+				markers[3] = bulbLeftSphere.transform.position;
 				markers[4] = bulbRightSphere.transform.position;
 				markers[5] = batteryRightSphere.transform.position;
 
@@ -588,9 +618,9 @@ public class lineRendererTest : MonoBehaviour {
 
 
 		}
-		if (playStatus == true )
+		if (playStatus == true)
 		{
-			
+
 			human.GetComponent<Animation>().Play();
 			showCurrentPlayStatus.text = "ON";
 			/*
@@ -650,19 +680,31 @@ public class lineRendererTest : MonoBehaviour {
 
 			particleTriggerBtn.image.sprite = playSprite;
 		}
+		if (resistorValue_Counter > 0)
+		{
+			overcurrentText.text = "";
 
+		}
 
 		updateAllValues();
+		calucalateCurrent();
+	
+
+
+
+			
+	
 
 	}
 
 
 	void TaskOnIncreaseClick()
 	{
-		resistorValue_Counter=resistorValue_Counter+5;
+		explainPanel.SetActive(false);
+		resistorValue_Counter = resistorValue_Counter + 5;
 		bulbElements--;
 
-		if (resistorValue_Counter > 20)
+		if (resistorValue_Counter >= 20)
 		{
 			resistorValue_Counter = 20;
 			bulbElements = 1;
@@ -670,16 +712,15 @@ public class lineRendererTest : MonoBehaviour {
 			//disable increasebutton here
 			increaseBtn.interactable = false;
 		}
-		
+
 
 		else
 		{
 			decreaseBtn.interactable = true;
-			showCounterText.text = resistorValue_Counter.ToString()+"k";
 		}
 
 
-	
+
 
 	}
 
@@ -689,28 +730,29 @@ public class lineRendererTest : MonoBehaviour {
 	void TaskOnDecreaseClick()
 	{
 
-		resistorValue_Counter=resistorValue_Counter-5;
+		resistorValue_Counter = resistorValue_Counter - 5;
 		bulbElements++;
 
-			
+		if (resistorValue_Counter <=0)
+		{
+			overcurrentSpeech.Play();
 
-		if (resistorValue_Counter <0)
-		{ 
 			resistorValue_Counter = 0;
 			bulbElements = 5;
 
 			//disable increasebutton here
 			decreaseBtn.interactable = false;
+
+               showExplosion();
+            StartCoroutine(overcurrentFlash());
+
+               
 		}
 
-		else {
-
+		else
+		{
 			increaseBtn.interactable = true;
-			showCounterText.text = resistorValue_Counter.ToString()+"k"; 
 		}
-
-
-
 
 	}
 
@@ -732,7 +774,7 @@ public class lineRendererTest : MonoBehaviour {
 		batteryVoltsValue = batteryVoltsValue + 1.5f;
 		batteryElement++;
 
-		if (batteryVoltsValue > 6)
+		if (batteryVoltsValue >= 6)
 		{
 			batteryElement = 5;
 			batteryVoltsValue = 6;
@@ -742,7 +784,6 @@ public class lineRendererTest : MonoBehaviour {
 		else
 		{
 			decreaseVoltsBtn.interactable = true;
-			showBatteryVolts.text = batteryVoltsValue.ToString() + "v";
 		}
 
 	}
@@ -752,7 +793,7 @@ public class lineRendererTest : MonoBehaviour {
 		batteryVoltsValue = batteryVoltsValue - 1.5f;
 		batteryElement--;
 
-		if (batteryVoltsValue < 0)
+		if (batteryVoltsValue <= 0)
 		{
 			batteryElement = 0;
 			batteryVoltsValue = 0;
@@ -761,7 +802,7 @@ public class lineRendererTest : MonoBehaviour {
 		else
 		{
 			increaseVoltsBtn.interactable = true;
-			showBatteryVolts.text = batteryVoltsValue.ToString() + "v";
+
 		}
 	}
 
@@ -770,8 +811,68 @@ public class lineRendererTest : MonoBehaviour {
 
 		showVoltageValue.text = batteryVoltsValue.ToString() + "V";
 		showResistanceValue.text = resistorValue_Counter.ToString() + "k";
+		showCurrentValue.text = currentValue.ToString() + "A";
+		showCounterText.text = resistorValue_Counter.ToString() + "k";
+		showBatteryVolts.text = batteryVoltsValue.ToString() + "v";
+		humanCurrentValue.text = currentValue.ToString() + "A";
 
 	}
 
+	void calucalateCurrent()
+	{
 
+		currentValue = batteryVoltsValue / resistorValue_Counter;
+
+	}
+
+	IEnumerator ExecuteAfterTime_explosion(float time)
+	{
+		yield return new WaitForSeconds(time);
+
+		// Code to execute after the delay
+	
+		explosionEffect.Stop();
+	}
+
+	void showExplosion()
+	{
+
+		explosionEffect.Play();
+
+			//Set Delay
+		StartCoroutine(ExecuteAfterTime_explosion(3f));
+			
+	}
+
+
+	public IEnumerator overcurrentFlash()
+	{
+		if (resistorValue_Counter.Equals(0))
+		{
+			explainPanel.SetActive(true);
+			overcurrentText.text = "O V E R C U R R E N T";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "O V E R C U R R E N T";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "O V E R C U R R E N T";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "O V E R C U R R E N T";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "O V E R C U R R E N T";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "";
+			yield return new WaitForSeconds(0.4f);
+			overcurrentText.text = "O V E R C U R R E N T";
+			yield break;
+		}
+
+	}
 }
