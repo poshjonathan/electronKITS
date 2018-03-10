@@ -12,8 +12,26 @@ URL: https://poly.google.com/view/8Px7hO6zcfg
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
+Title: Complex Candle Holder
+Author: Garrett LeFever
+URL: https://poly.google.com/view/6BiIhpkg0yz
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Fireplace
+Author: Robert Mirabelle
+URL: https://poly.google.com/view/0sJwuu5U148
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Keg
 Author: Poly by Google
 URL: https://poly.google.com/view/eaP9ogrSQFQ
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Unlit Fire
+Author: Eric Oudin
+URL: https://poly.google.com/view/fSXzcAy7X7q
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode

@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 332182407}
   - component: {fileID: 332182410}
   m_Layer: 5
-  m_Name: UnderstandingEE Button
+  m_Name: Learn Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 725152142}
   - component: {fileID: 725152141}
   m_Layer: 5
-  m_Name: StartButton (1)
+  m_Name: Instruction Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 1022631576}
   - component: {fileID: 1022631575}
   m_Layer: 5
-  m_Name: StartButton (2)
+  m_Name: About electronKits Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

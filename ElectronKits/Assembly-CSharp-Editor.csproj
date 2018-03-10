@@ -112,6 +112,7 @@
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Bubbles\Bubbles.shader" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\SoftHighlighter\SoftHighlighter.shader" />
+     <None Include="Assets\Dynamic Flickering Light\readme.txt" />
      <None Include="Assets\PolyToolkit\Shaders\PolyToolkitPbrOpaqueDoubleSided.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Shared\Shaders\StandardDoubleSided.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Hypercolor\HypercolorSingleSided.shader" />
@@ -126,6 +127,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Shared\Shaders\DiffuseOpaqueDoubleSided.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+     <None Include="Assets\Poly\Sources\Unlit_Fire_Eric_Oudin_fSXzcAy7X7q\FileNameMapping.txt" />
      <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
@@ -163,7 +165,6 @@
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Shared\Shaders\Bloom.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Embers\Embers.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
-     <None Include="Assets\StreamingAssets\Vuforia\Image.xml" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Blocks\BlocksPaper\BlocksPaper.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Blocks\BlocksGlass\BlocksGlass.shader" />
      <None Include="Assets\Poly\Sources\AA_battery_Poly_by_Google_2TKK0wpiWPw\FileNameMapping.txt" />
@@ -172,6 +173,7 @@
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
      <None Include="Assets\PolyToolkit\Shaders\PolyToolkitPbrBlendDoubleSided.shader" />
+     <None Include="Assets\StreamingAssets\Vuforia\Image.xml" />
      <None Include="Assets\PolyToolkit\ThirdParty\Noise\Shaders\Noise.cginc" />
      <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
@@ -184,6 +186,7 @@
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Shared\Shaders\DiffuseSingleSided.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Shared\Shaders\Unlit.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\DoubleTaperedFlat\DiffuseNoTextureDoubleSided.shader" />
+     <None Include="Assets\Poly\Sources\Fireplace_Robert_Mirabelle_0sJwuu5U148\FileNameMapping.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Shaders\Include\Particles.cginc" />
@@ -209,6 +212,7 @@
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Snow\Snow.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\ChromaticWave\ChromaticWave.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+     <None Include="Assets\Poly\Sources\Complex_Candle_Holder_Garrett_LeFever_6BiIhpkg0yz\FileNameMapping.txt" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Shared\Shaders\DiffuseDoubleSided.shader" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
