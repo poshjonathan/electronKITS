@@ -10,11 +10,15 @@ public static int iInput_current, iInput_next;
 
 public AudioSource click_sound;
 
+private GameManagerScript chkClick;
+
 void Start()
 {
 	convertToNum();
 	inputA_current.text = iInput_current.ToString();
 	inputA_next.text = iInput_next.ToString();
+
+		chkClick = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 }
 
 void OnMouseDown()
@@ -29,6 +33,8 @@ void OnMouseDown()
 	inputA_next.text = iInput_next.ToString();
 
 	click_sound.Play();
+
+		chkClick.checkBtnClick = true;
 
 }
 

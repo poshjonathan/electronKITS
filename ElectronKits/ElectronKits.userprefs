@@ -1,17 +1,18 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LogicGateLineRender.cs">
+﻿<Properties StartupConfiguration="{2372D745-6FF7-D796-D72D-D74318B1C4AC}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LogicGateChallenge.cs">
     <Files>
-      <File FileName="Assets/LogicGateLineRender.cs" Line="1180" Column="4" />
-      <File FileName="Assets/OnClickAndInputAScript.cs" Line="56" Column="3" />
-      <File FileName="Assets/OnClickOrInputBScript.cs" Line="56" Column="3" />
+      <File FileName="Assets/LogicGateChallenge.cs" Line="229" Column="4" />
+      <File FileName="Assets/SetCountDown.cs" Line="13" Column="3" />
+      <File FileName="Assets/InstructionScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/OnClickAndInputAScript.cs" Line="12" Column="2" />
+      <File FileName="Assets/OnClickOrInputBScript.cs" Line="37" Column="33" />
+      <File FileName="Assets/OnClickAndInputBScript.cs" Line="37" Column="33" />
+      <File FileName="Assets/OnClickNorInputAScript.cs" Line="37" Column="33" />
+      <File FileName="Assets/OnClickNorInputBScript.cs" Line="37" Column="33" />
+      <File FileName="Assets/onClickOrInputAScript.cs" Line="10" Column="47" />
       <File FileName="Assets/Vuforia/Scripts/VuforiaBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ResistorTutorial.cs" Line="267" Column="4" />
-      <File FileName="Assets/colorPicker.cs" Line="34" Column="4" />
-      <File FileName="Assets/Scripts/lineRendererTest.cs" Line="80" Column="2" />
-      <File FileName="Assets/OnClickAndInputBScript.cs" Line="56" Column="3" />
-      <File FileName="Assets/OnClickNorInputAScript.cs" Line="56" Column="3" />
-      <File FileName="Assets/OnClickNorInputBScript.cs" Line="20" Column="19" />
-      <File FileName="Assets/customAndGateTracker.cs" Line="96" Column="18" />
+      <File FileName="Assets/GameManagerScript.cs" Line="8" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -19,5 +20,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

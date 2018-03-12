@@ -63,7 +63,11 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+     <Compile Include="Assets\GameManagerScript.cs" />
+     <Compile Include="Assets\InstructionScript.cs" />
+     <Compile Include="Assets\LogicGateChallenge.cs" />
      <Compile Include="Assets\LogicGateLineRender.cs" />
+     <Compile Include="Assets\LogicGateRound1.cs" />
      <Compile Include="Assets\OnClickAndInputAScript.cs" />
      <Compile Include="Assets\OnClickAndInputBScript.cs" />
      <Compile Include="Assets\OnClickNorInputAScript.cs" />
@@ -189,6 +193,7 @@
      <Compile Include="Assets\Scripts\vb5Band.cs" />
      <Compile Include="Assets\Scripts\vbBack.cs" />
      <Compile Include="Assets\Scripts\vbNext.cs" />
+     <Compile Include="Assets\SetCountDown.cs" />
      <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
      <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\Demo.cs" />
      <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControl.cs" />
@@ -344,6 +349,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Smoke\Smoke.shader" />
+     <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Snow\Snow.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\ChromaticWave\ChromaticWave.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />

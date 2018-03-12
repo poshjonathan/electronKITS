@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/LogicGateScene.unity
+- path: Assets/LogicGateChallengeScene.unity
   isLoaded: 1
   isActive: 1
