@@ -15,7 +15,7 @@ public class InstructionScript : MonoBehaviour
 
 	public Button btnNext, btnBack, btnStart;
 
-	public GameObject panelInstruction,countdown;
+	public GameObject panelInstruction, countdown;
 
 
 	// Use this for initialization
@@ -107,12 +107,14 @@ public class InstructionScript : MonoBehaviour
 
 	}
 
-void TaskOnStartClick()
+	void TaskOnStartClick()
 
-{
-		
+	{
+
 		panelInstruction.SetActive(false);
 		countdown.SetActive(true);
+
+
 	}
 
 

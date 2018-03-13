@@ -68,6 +68,7 @@
      <Compile Include="Assets\LogicGateChallenge.cs" />
      <Compile Include="Assets\LogicGateLineRender.cs" />
      <Compile Include="Assets\LogicGateRound1.cs" />
+     <Compile Include="Assets\LogicGateRound2.cs" />
      <Compile Include="Assets\OnClickAndInputAScript.cs" />
      <Compile Include="Assets\OnClickAndInputBScript.cs" />
      <Compile Include="Assets\OnClickNorInputAScript.cs" />
@@ -168,6 +169,7 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+     <Compile Include="Assets\RoundSelectorScript.cs" />
      <Compile Include="Assets\Scripts\custom1_5kResistanceTracker.cs" />
      <Compile Include="Assets\Scripts\Custom1kResistanceTracker.cs" />
      <Compile Include="Assets\Scripts\custom22kResistorTracker.cs" />
@@ -194,6 +196,7 @@
      <Compile Include="Assets\Scripts\vbBack.cs" />
      <Compile Include="Assets\Scripts\vbNext.cs" />
      <Compile Include="Assets\SetCountDown.cs" />
+     <Compile Include="Assets\soundPlay.cs" />
      <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
      <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\Demo.cs" />
      <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControl.cs" />

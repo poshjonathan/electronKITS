@@ -994,7 +994,7 @@ BattRline = BatteryResistorline.AddComponent<LineRenderer>();
 		}
 
 	}
-	*/
+*/
 
 	bool checkInputOrConnection()
 	{

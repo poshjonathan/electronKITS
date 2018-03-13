@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetCountDown : MonoBehaviour {
+public class SetCountDown : MonoBehaviour
+{
 
 	private GameManagerScript GMS;
 	public GameObject countdown;
+	public GameObject round1;
 
 	public void SetCountDownNow()
 	{
@@ -14,19 +16,9 @@ public class SetCountDown : MonoBehaviour {
 		GMS.counterDownDone = true;
 
 
+		GMS.round1 = true;
+		countdown.SetActive(false);
 	}
 
-	void Update()
-	{
-
-
-		if (GMS.counterDownDone == true)
-		{
-
-			countdown.SetActive(false);
-
-		}
-
-	}
 
 }

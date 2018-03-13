@@ -21,7 +21,8 @@ a9ceaad7d51aada88335b5bf9c0e71a4 Assembly-CSharp.dll:Vuforia.ReconstructionBehav
 564d16955e3c1b82f2ce70912bbf22b8 Assembly-CSharp.dll:.FlickeringLight
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customSmallBulbTrackerScript
 1b1a7a1429d819e34ed7aa3c4e9f5fc3 Assembly-CSharp.dll:.Rotate
-9a5ceeee9fc1ae07d5ae68b06b7cb062 Assembly-CSharp.dll:.LogicGateRound1
+7deab17ad862d9fac1398a9b58a21f6c Assembly-CSharp.dll:.LogicGateRound1
+facff183a7d27484a454c03284a28a2d Assembly-CSharp.dll:.LogicGateRound2
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.GLErrorHandler
 7d0aa0f64a823db9982e4fed92870a4c Assembly-CSharp.dll:.ResizePanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.ComponentFactoryStarterBehaviour
@@ -160,13 +161,13 @@ b7536247a550bc1596505b7f345c8adf Assembly-CSharp.dll:.GunAim
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.DistortionRenderingBehaviour
 66ee6ce0968b1fa679c5c06187b8e23f Vuforia.UnityExtensions.dll:Vuforia.VuforiaAbstractBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.VuforiaDeinitBehaviour
-4690c63ee831efd13d212c666dbb7807 Assembly-CSharp.dll:.SetCountDown
+d9bbd420256643c248b12b3ef71145bb Assembly-CSharp.dll:.SetCountDown
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customAndGateTracker
 378152aff2ab89b1a7a6bbd21f1a9ffb Assembly-CSharp.dll:.LogicGateChallenge
 378152aff2ab89b1a7a6bbd21f1a9ffb Assembly-CSharp.dll:.LogicGateLineRender
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customNorGateTracker
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.TurnOffWordBehaviour
-1c70cf805bd420c83abcf71cf3b00f9f Assembly-CSharp.dll:.GameManagerScript
+098168ce6ed7880981cbf98f2b50c22c Assembly-CSharp.dll:.GameManagerScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:PolyToolkitInternal.Authenticator
 847108a4f4300c8402f74cce11a88a67 Assembly-CSharp.dll:.DropMe
 bacd3fdf07fd8780e174b7c70df3ef9b Assembly-CSharp.dll:.vb5Band
@@ -179,6 +180,7 @@ b6708ac8c82b3d7f9acaf91dd0bbea37 Assembly-CSharp.dll:.lineRendererTest
 a3b69f0a397fa8bdc16aac740c10d8a6 Assembly-CSharp.dll:.InstructionScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ShowSliderValue
 920132670b09203205400beadd1ce263 Assembly-CSharp.dll:.vb_B
+dd22dc8647cc568727783deac0c965bc Assembly-CSharp.dll:.soundPlay
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.Custom1kResistanceTracker
 16d085e7a8d79f3e914f5319320a2f04 Assembly-CSharp.dll:.OnClickAndInputAScript
 22433ead6d51685fbd559a31a7f4c4f6 Assembly-CSharp.dll:TiltBrushToolkit.BrushDescriptor
@@ -220,6 +222,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
+5bc80ac658826415a6fb783714808f48 Assembly-CSharp.dll:.RoundSelectorScript
 91333b98e294432cb6bbf7c67b32b260 Assembly-CSharp.dll:.ExtinguishableFire
 f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingProfile
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WebCamTexutreToTexture2D

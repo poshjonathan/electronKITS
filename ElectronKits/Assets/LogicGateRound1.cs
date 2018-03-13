@@ -21,27 +21,25 @@ public class LogicGateRound1 : MonoBehaviour
 
 	public TextMesh txtOrOutput_current, txtAndOutput_current, txtNorOutput_current;
 
-	public Text txtRoundHeader;
 
-	private GameObject correctText, wrongText;
-
-	private GameManagerScript chkClick;
+	private GameManagerScript GMS;
 
 	public AudioSource correct_sound, wrong_sound;
+
+	private soundPlay soundPlay;
+	//private GameObject round1;
+
+	//Get information from GameManger Script
+	private GameManagerScript gmRound2;
 
 	// Use this for initialization
 	void Start()
 	{
+		//Get information from GameManger Script
+		GMS = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+soundPlay = GameObject.Find("Rounds").GetComponent<soundPlay>();
 
-		txtRoundHeader.text = "Round 1";
 
-		correctText = GameObject.Find("CorrectText");
-		correctText.SetActive(false);
-
-wrongText = GameObject.Find("WrongText");
-wrongText.SetActive(false);
-
-		chkClick = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 
 
 	}
@@ -49,6 +47,10 @@ wrongText.SetActive(false);
 	// Update is called once per frame
 	void Update()
 	{
+
+
+
+
 
 		orTracker = customOrGateTracker.orGateTracker;
 		norTracker = customNorGateTracker.norGateTracker;
@@ -70,17 +72,18 @@ wrongText.SetActive(false);
 
 		txtOrOutput_current.text = orGateFunction().ToString();
 
-			txtAndOutput_current.text = andGateFunction().ToString();
-           
+		txtAndOutput_current.text = andGateFunction().ToString();
+
 
 
 		txtNorOutput_current.text = norGateFunction().ToString();
 
-		if (chkClick.checkBtnClick == true)
+		if (GMS.checkBtnClick == true)
 		{
 			checkAnswer();
-			chkClick.checkBtnClick = false;
+
 		}
+
 	}
 
 
@@ -140,23 +143,52 @@ wrongText.SetActive(false);
 
 		//Correct Answer
 		if (andGateFunction() == 1)
-		{
+		{	soundPlay.soundCorrectNow();
+			StartCoroutine(correctAnswer());
 
-			correctText.SetActive(true);
-			wrongText.SetActive(false);
-			correct_sound.Play();
+				
 
+	
 		}
 		else
 		{
+			soundPlay.soundWrongNow();
+			StartCoroutine(wrongAnswer());
 
-
-			wrongText.SetActive(true);
-			wrong_sound.Play();
-
+		
 
 		}
+			GMS.checkBtnClick = false;// This one cannot put inside coroutine!
+
+	}
+
+	public IEnumerator correctAnswer()
+	{
+
+
+
+
+		soundPlay.showCorrectText();
+			yield return new WaitForSeconds(1.5f);
+		soundPlay.hideCorrectText();
+		GMS.round2 = true;
+		yield break;
+
 
 
 	}
+
+	public IEnumerator wrongAnswer()
+	{
+
+
+
+		soundPlay.showWrongText();
+		yield return new WaitForSeconds(1.5f);
+			soundPlay.hideWrongText();
+	
+		yield break;
+	}
+
+
 }
