@@ -69,6 +69,8 @@
      <Compile Include="Assets\LogicGateLineRender.cs" />
      <Compile Include="Assets\LogicGateRound1.cs" />
      <Compile Include="Assets\LogicGateRound2.cs" />
+     <Compile Include="Assets\LogicGateRound3.cs" />
+     <Compile Include="Assets\LogicGateRound4.cs" />
      <Compile Include="Assets\OnClickAndInputAScript.cs" />
      <Compile Include="Assets\OnClickAndInputBScript.cs" />
      <Compile Include="Assets\OnClickNorInputAScript.cs" />

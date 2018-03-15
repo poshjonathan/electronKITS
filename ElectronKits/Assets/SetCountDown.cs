@@ -18,6 +18,7 @@ public class SetCountDown : MonoBehaviour
 
 		GMS.round1 = true;
 		countdown.SetActive(false);
+		GMS.stopWatch.Start();
 	}
 
 

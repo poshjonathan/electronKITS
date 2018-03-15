@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,8 +8,6 @@ using Vuforia;
 
 public class LogicGateRound2 : MonoBehaviour
 {
-
-
 
 	private static int orInputA_State, orInputB_State;
 	private static int andInputA_State, andInputB_State;
@@ -58,6 +57,9 @@ public class LogicGateRound2 : MonoBehaviour
 public ParticleSystem orFireEffect, andFireEffect, norFireEffect;
 
 private soundPlay soundPlay;
+
+	public Text showTime;
+
 
 	// Use this for initialization
 	void Start()
@@ -414,10 +416,12 @@ private soundPlay soundPlay;
 			txtNorOutput_current.text = norGateFunction().ToString();
 		}
 
-		if (GMS.checkBtnClick == true)
-		{
+		if (GMS.checkBtnClick == true) {
 			checkAnswer();
 		}
+		    
+
+	
 
 
 	}
@@ -478,17 +482,20 @@ private soundPlay soundPlay;
 	{
 
 		//Correct Answer
-		if (norGateCombineFunction() == 1)
+		if ((norGateCombineFunction() == 1 && GMS.questionNumber==2) || (orGateCombineFunction() == 1&& GMS.questionNumber==3)
+		    ||(andGateCombineFunction()==1 && GMS.questionNumber==4))
 		{
 
 
-soundPlay.soundCorrectNow();
+			soundPlay.soundCorrectNow();
 			StartCoroutine(correctAnswer());
-            StartCoroutine(nextQuest());
+			StartCoroutine(nextQuest());
 
 
 
 		}
+
+
 		else
 		{
 			soundPlay.soundWrongNow();
@@ -497,7 +504,7 @@ soundPlay.soundCorrectNow();
 
 
 		}
-	
+
 
 
 		GMS.checkBtnClick = false;// This one cannot put inside coroutine!
@@ -507,14 +514,34 @@ soundPlay.soundCorrectNow();
 
 	public IEnumerator correctAnswer()
 	{
-
-
 		soundPlay.showCorrectText();
 		yield return new WaitForSeconds(1.5f);
 		soundPlay.hideCorrectText();
-		GMS.round3 = true;
-		questionNumber++;
-		yield break;
+	
+		
+
+		if (GMS.questionNumber == 2)
+		{
+					GMS.round3 = true;
+
+		}
+		if (GMS.questionNumber == 3)
+		{
+
+			GMS.round4 = true;
+		}
+		if (GMS.questionNumber == 4)
+		{
+			TimeSpan ts = GMS.stopWatch.Elapsed;
+			GMS.stopWatch.Stop();
+			showTime.text = "Your Time:\n"+ts.ToString();
+
+
+
+		}
+		//questionNumber++;
+						GMS.questionNumber++;
+	yield break;
 	}
 
 	public IEnumerator nextQuest()

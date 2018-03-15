@@ -1,12 +1,15 @@
-﻿<Properties StartupConfiguration="{2372D745-6FF7-D796-D72D-D74318B1C4AC}|Unit Tests">
+﻿<Properties StartupConfiguration="{CFAE411F-4508-5A77-9457-C3703BC4CD0B}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LogicGateRound2.cs">
     <Files>
+      <File FileName="Assets/LogicGateRound1.cs" Line="1" Column="1" />
+      <File FileName="Assets/LogicGateRound2.cs" Line="538" Column="4" />
+      <File FileName="Assets/LogicGateRound3.cs" Line="479" Column="35" />
       <File FileName="Assets/soundPlay.cs" Line="27" Column="23" />
-      <File FileName="Assets/LogicGateRound1.cs" Line="166" Column="3" />
       <File FileName="Assets/LogicGateChallenge.cs" Line="780" Column="20" />
-      <File FileName="Assets/RoundSelectorScript.cs" Line="54" Column="4" />
-      <File FileName="Assets/GameManagerScript.cs" Line="13" Column="19" />
-      <File FileName="Assets/SetCountDown.cs" Line="20" Column="30" />
+      <File FileName="Assets/RoundSelectorScript.cs" Line="68" Column="3" />
+      <File FileName="Assets/GameManagerScript.cs" Line="20" Column="2" />
+      <File FileName="Assets/SetCountDown.cs" Line="26" Column="1" />
       <File FileName="Assets/InstructionScript.cs" Line="23" Column="3" />
       <File FileName="Assets/OnClickAndInputAScript.cs" Line="12" Column="2" />
       <File FileName="Assets/OnClickOrInputBScript.cs" Line="37" Column="33" />
@@ -14,7 +17,8 @@
       <File FileName="Assets/OnClickNorInputAScript.cs" Line="37" Column="33" />
       <File FileName="Assets/OnClickNorInputBScript.cs" Line="37" Column="33" />
       <File FileName="Assets/onClickOrInputAScript.cs" Line="10" Column="47" />
-      <File FileName="Assets/LogicGateRound2.cs" Line="547" Column="29" />
+      <File FileName="Assets/LogicGateRound4.cs" Line="478" Column="29" />
+      <File FileName="Assets/Scripts/lineRendererTest.cs" Line="38" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
