@@ -55,6 +55,7 @@
      <Compile Include="Assets\customAndGateTracker.cs" />
      <Compile Include="Assets\customNorGateTracker.cs" />
      <Compile Include="Assets\customOrGateTracker.cs" />
+     <Compile Include="Assets\CustomResistorTracker.cs" />
      <Compile Include="Assets\Dynamic Flickering Light\FlickeringLight.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
@@ -69,8 +70,6 @@
      <Compile Include="Assets\LogicGateLineRender.cs" />
      <Compile Include="Assets\LogicGateRound1.cs" />
      <Compile Include="Assets\LogicGateRound2.cs" />
-     <Compile Include="Assets\LogicGateRound3.cs" />
-     <Compile Include="Assets\LogicGateRound4.cs" />
      <Compile Include="Assets\OnClickAndInputAScript.cs" />
      <Compile Include="Assets\OnClickAndInputBScript.cs" />
      <Compile Include="Assets\OnClickNorInputAScript.cs" />
@@ -350,6 +349,7 @@
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Blocks\BlocksGem\BlocksGem.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\PolyToolkit\Internal\tbt\Brushes\Basic\Electricity\Electricity.shader" />
+     <None Include="Assets\Poly\Sources\Hand_Poly_by_Google_btWmPNVSKUc\FileNameMapping.txt" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />

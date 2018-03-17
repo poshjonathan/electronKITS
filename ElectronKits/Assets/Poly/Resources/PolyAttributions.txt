@@ -24,6 +24,12 @@ URL: https://poly.google.com/view/0sJwuu5U148
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
+Title: Hand
+Author: Poly by Google
+URL: https://poly.google.com/view/btWmPNVSKUc
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Keg
 Author: Poly by Google
 URL: https://poly.google.com/view/eaP9ogrSQFQ

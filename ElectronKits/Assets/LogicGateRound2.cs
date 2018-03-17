@@ -26,7 +26,7 @@ public class LogicGateRound2 : MonoBehaviour
 	private GameManagerScript GMS;
 	private int questionNumber = 2;
 
-//Get information from GameManger Script
+	//Get information from GameManger Script
 
 	//private GameObject round1;
 
@@ -54,11 +54,14 @@ public class LogicGateRound2 : MonoBehaviour
 	private float distanceNor_Min, distanceOr_Min, distanceAnd_Min;
 	private int distanceNor_Index = 1, distanceOr_Index = 1, distanceAnd_Index = 1;
 
-public ParticleSystem orFireEffect, andFireEffect, norFireEffect;
+	public ParticleSystem orFireEffect, andFireEffect, norFireEffect;
 
-private soundPlay soundPlay;
+	private soundPlay soundPlay;
 
 	public Text showTime;
+
+	public Button retryBtn;
+	//public GameObject countDownRetry;
 
 
 	// Use this for initialization
@@ -118,6 +121,12 @@ private soundPlay soundPlay;
 		btnNorInputB = GameObject.Find("norInputB");
 
 
+		retryBtn.onClick.AddListener(TaskOnRetryClick);
+
+
+		//retryBtn.gameObject.SetActive(false);
+
+//countDownRetry.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -416,12 +425,13 @@ private soundPlay soundPlay;
 			txtNorOutput_current.text = norGateFunction().ToString();
 		}
 
-		if (GMS.checkBtnClick == true) {
+		if (GMS.checkBtnClick == true)
+		{
 			checkAnswer();
 		}
-		    
 
-	
+
+
 
 
 	}
@@ -482,8 +492,8 @@ private soundPlay soundPlay;
 	{
 
 		//Correct Answer
-		if ((norGateCombineFunction() == 1 && GMS.questionNumber==2) || (orGateCombineFunction() == 1&& GMS.questionNumber==3)
-		    ||(andGateCombineFunction()==1 && GMS.questionNumber==4))
+		if ((norGateCombineFunction() == 1 && GMS.questionNumber == 2) || (orGateCombineFunction() == 1 && GMS.questionNumber == 3)
+			|| (andGateCombineFunction() == 1 && GMS.questionNumber == 4))
 		{
 
 
@@ -499,7 +509,7 @@ private soundPlay soundPlay;
 		else
 		{
 			soundPlay.soundWrongNow();
-            StartCoroutine(wrongAnswer());
+			StartCoroutine(wrongAnswer());
 
 
 
@@ -517,12 +527,17 @@ private soundPlay soundPlay;
 		soundPlay.showCorrectText();
 		yield return new WaitForSeconds(1.5f);
 		soundPlay.hideCorrectText();
-	
-		
+
+		if (GMS.questionNumber == 1)
+		{
+
+			GMS.round2 = true;
+
+		}
 
 		if (GMS.questionNumber == 2)
 		{
-					GMS.round3 = true;
+			GMS.round3 = true;
 
 		}
 		if (GMS.questionNumber == 3)
@@ -532,16 +547,17 @@ private soundPlay soundPlay;
 		}
 		if (GMS.questionNumber == 4)
 		{
+
+			GMS.roundComplete = true;
 			TimeSpan ts = GMS.stopWatch.Elapsed;
 			GMS.stopWatch.Stop();
-			showTime.text = "Your Time:\n"+ts.ToString();
-
+			showTime.text = "Your Time:\n" + ts.ToString();
 
 
 		}
 		//questionNumber++;
-						GMS.questionNumber++;
-	yield break;
+		GMS.questionNumber++;
+		yield break;
 	}
 
 	public IEnumerator nextQuest()
@@ -574,33 +590,31 @@ private soundPlay soundPlay;
 	bool checkInputOrConnection()
 	{
 
-	
+
+		if ((sAndOut_OrInA == true && sNorOut_OrInB == true) || (sAndOut_OrInB == true && sNorOut_OrInA == true))
+		{
+
+			orOutLine.enabled = false;
+			btnOrInputA.SetActive(false);
+			btnOrInputB.SetActive(false);
+
+			goOrBulb.SetActive(true);
+
+			txtOrOutput_current.text = orGateCombineFunction().ToString();
 
 
-			if ((sAndOut_OrInA == true && sNorOut_OrInB == true) || (sAndOut_OrInB == true && sNorOut_OrInA == true))
-			{
+			return false;
+		}
+		else
+		{
+			btnOrInputA.SetActive(true);
+			btnOrInputB.SetActive(true);
 
-				orOutLine.enabled = false;
-				btnOrInputA.SetActive(false);
-				btnOrInputB.SetActive(false);
-
-				goOrBulb.SetActive(true);
-
-				txtOrOutput_current.text = orGateCombineFunction().ToString();
+			goOrBulb.SetActive(false);
+			return true;
+		}
 
 
-				return false;
-			}
-			else
-			{
-				btnOrInputA.SetActive(true);
-				btnOrInputB.SetActive(true);
-
-				goOrBulb.SetActive(false);
-				return true;
-			}
-
-	
 
 	}
 
@@ -662,60 +676,66 @@ private soundPlay soundPlay;
 	}
 
 
-int orGateCombineFunction()
-{
-
-	if (andGateFunction() == 1 || norGateFunction() == 1)
+	int orGateCombineFunction()
 	{
-		orFireEffect.Play();
-		//onBulbLight();
-		return 1;
+
+		if (andGateFunction() == 1 || norGateFunction() == 1)
+		{
+			orFireEffect.Play();
+			//onBulbLight();
+			return 1;
+		}
+		else
+		{
+			orFireEffect.Stop();
+			//offBulbLight();
+			return 0;
+		}
+
+
+
 	}
-	else
+
+	int andGateCombineFunction()
 	{
-		orFireEffect.Stop();
-		//offBulbLight();
-		return 0;
+
+		if (orGateFunction() == 1 && norGateFunction() == 1)
+		{
+			andFireEffect.Play();
+			return 1;
+		}
+		else
+		{
+			andFireEffect.Stop();
+			return 0;
+		}
+
+
 	}
 
-
-
-}
-
-int andGateCombineFunction()
-{
-
-	if (orGateFunction() == 1 && norGateFunction() == 1)
+	int norGateCombineFunction()
 	{
-		andFireEffect.Play();
-		return 1;
+
+		if (orGateFunction() == 0 && andGateFunction() == 0)
+		{
+			norFireEffect.Play();
+			return 1;
+		}
+		else
+		{
+			norFireEffect.Stop();
+			return 0;
+		}
 	}
-	else
+
+
+	void TaskOnRetryClick()
+
 	{
-		andFireEffect.Stop();
-		return 0;
+
+		//GMS.round1 = true;
+		//GMS.questionNumber = 2;
 	}
-
-
-}
-
-int norGateCombineFunction()
-{
-
-	if (orGateFunction() == 0 && andGateFunction() == 0)
-	{
-		norFireEffect.Play();
-		return 1;
-	}
-	else
-	{
-		norFireEffect.Stop();
-		return 0;
-	}
-	}
-
-
-
 
 
 }

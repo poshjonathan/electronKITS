@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Important Scenes/ResistorMenuScene.unity
     guid: 40991a326f35541a482b99531b8d8527
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/ARscene.unity
     guid: 7a2ba9d806ece46b9b21dd27d9fa89be
   - enabled: 0
@@ -53,6 +53,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MobileCam.unity
     guid: 011315c80b6464972b036c115205396d
-  - enabled: 1
+  - enabled: 0
     path: Assets/LogicGateChallengeScene.unity
     guid: 2c67b97d16de34dc0a70938780f1e937

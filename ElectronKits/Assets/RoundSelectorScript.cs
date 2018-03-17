@@ -6,7 +6,7 @@ public class RoundSelectorScript : MonoBehaviour
 {
 
 
-	public GameObject goRound1, goRound2, goRound3, goRound4;
+	public GameObject goRound1, goRound2, goRound3, goRound4,goRoundComplete;
 	public GameObject round1Script, round2Script;
 
 	private GameManagerScript chkRound;
@@ -18,6 +18,7 @@ public class RoundSelectorScript : MonoBehaviour
 		goRound2.SetActive(false);
 		goRound3.SetActive(false);
 		goRound4.SetActive(false);
+		goRoundComplete.SetActive(false);
 
 		chkRound = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 
@@ -31,6 +32,8 @@ public class RoundSelectorScript : MonoBehaviour
 	{
 		if (chkRound.round1 == true)
 		{
+			
+				
 			round1Script.GetComponent<LogicGateRound1>().enabled = true;
 			goRound1.SetActive(true);
 
@@ -58,6 +61,15 @@ public class RoundSelectorScript : MonoBehaviour
 		{
 			chkRound.round3 = false;
 			StartCoroutine(startRound4());
+		}
+
+		if (chkRound.roundComplete == true)
+		{
+
+			chkRound.round4 = false;
+            StartCoroutine(startRoundComplete());
+
+
 		}
 
 
@@ -88,5 +100,12 @@ public class RoundSelectorScript : MonoBehaviour
 		goRound4.SetActive(true);
 		yield break;
 	}
+
+public IEnumerator startRoundComplete()
+{
+	goRound4.SetActive(false);
+	yield return new WaitForSeconds(2f);
+	goRoundComplete.SetActive(true);
+	yield break;	}
 
 }
