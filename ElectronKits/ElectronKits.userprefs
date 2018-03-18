@@ -1,6 +1,8 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ResistorTutorial.cs">
+﻿<Properties StartupConfiguration="{CFAE411F-4508-5A77-9457-C3703BC4CD0B}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/lineRendererTest.cs">
     <Files>
+      <File FileName="Assets/Scripts/lineRendererTest.cs" Line="816" Column="62" />
       <File FileName="Assets/Scripts/ResistorTutorial.cs" Line="386" Column="26" />
       <File FileName="Assets/InstructionScript.cs" Line="104" Column="3" />
       <File FileName="Assets/RoundSelectorScript.cs" Line="31" Column="13" />
@@ -8,7 +10,6 @@
       <File FileName="Assets/LogicGateRound2.cs" Line="740" Column="2" />
       <File FileName="Assets/GameManagerScript.cs" Line="21" Column="31" />
       <File FileName="Assets/SetCountDown.cs" Line="19" Column="13" />
-      <File FileName="Assets/Scripts/lineRendererTest.cs" Line="183" Column="3" />
       <File FileName="Assets/CustomResistorTracker.cs" Line="17" Column="35" />
       <File FileName="Assets/Scripts/customSmallBulbTrackerScript.cs" Line="12" Column="15" />
     </Files>

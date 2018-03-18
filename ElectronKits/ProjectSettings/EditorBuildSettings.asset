@@ -5,36 +5,42 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/LogicGateScene.unity
-    guid: 4a3d02b2eda37483a9bc4587c4ef5f88
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/MainMenuScene.unity
     guid: d489c4e47d23c4c4c8bfcda5d0acbae3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/LearnMenuScene.unity
     guid: eaeb806d345fb4d489fed99d12ae8b45
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/ScanNLearnScene.unity
     guid: 7d4162b81d2f746d587ff3be67bbaec5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/ActivityMenuScene.unity
     guid: b41b0da8ca55344e3b35472afb313519
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/ResistorMenuScene.unity
     guid: 40991a326f35541a482b99531b8d8527
   - enabled: 1
     path: Assets/Scenes/Important Scenes/ARscene.unity
     guid: 7a2ba9d806ece46b9b21dd27d9fa89be
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/AR_Resistance_Value.unity
     guid: f4a6106b59c874ca99b10e5d5c44d0d4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Important Scenes/AR_Resistance_PQ_Easy.unity
     guid: c4c547690ed9b467cbf3295fdb39530a
-  - enabled: 0
+  - enabled: 1
     path: Assets/LightExperimentScene.unity
     guid: bf23ce9f3b5e6447ca84f5760a62671a
+  - enabled: 1
+    path: Assets/AboutelectronKitsScene.unity
+    guid: 29d6a794f289c46c5b97afb5466e4d3c
+  - enabled: 1
+    path: Assets/LogicGateScene.unity
+    guid: 4a3d02b2eda37483a9bc4587c4ef5f88
+  - enabled: 1
+    path: Assets/LogicGateChallengeScene.unity
+    guid: 2c67b97d16de34dc0a70938780f1e937
   - enabled: 0
     path: 
     guid: 477e83965af2d4805aeebefc0159d680
@@ -53,6 +59,3 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MobileCam.unity
     guid: 011315c80b6464972b036c115205396d
-  - enabled: 0
-    path: Assets/LogicGateChallengeScene.unity
-    guid: 2c67b97d16de34dc0a70938780f1e937

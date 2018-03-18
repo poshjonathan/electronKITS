@@ -224,6 +224,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 003cd0039098ebbb8654b0ed725ade2d Assembly-CSharp.dll:.RoundSelectorScript
 91333b98e294432cb6bbf7c67b32b260 Assembly-CSharp.dll:.ExtinguishableFire
+9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.CustomResistorTracker
 f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingProfile
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WebCamTexutreToTexture2D
 8a8bbf8c923aa45b1565ce9733c32e8e Assembly-CSharp.dll:.HelloPoly
@@ -245,4 +246,3 @@ bbbfd9e6b3ef79513cf1f54ca5a84e7e Assembly-CSharp.dll:.vb4Band
 16d085e7a8d79f3e914f5319320a2f04 Assembly-CSharp.dll:.OnClickNorInputBScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChangeColor
 7cac06ac0eaa7257b831c29e4455ce1b Assembly-CSharp.dll:Vuforia.VuforiaConfiguration
-9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.CustomResistorTracker

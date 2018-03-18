@@ -438,7 +438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: back
+  m_Text: BACK
 --- !u!222 &53320991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7033,7 +7033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -86, y: 22}
+  m_AnchoredPosition: {x: -90, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191077930
@@ -7643,8 +7643,22 @@ MonoBehaviour:
   showParagraph: {fileID: 0}
   showParagraphResistorVideo: {fileID: 0}
   paraIndex: 0
-  iconNext: {fileID: 0}
-  iconBack: {fileID: 0}
+  nextBtn: {fileID: 0}
+  backBtn: {fileID: 0}
+  goNext: {fileID: 0}
+  goBack: {fileID: 0}
+  resistanceCartoonImage: {fileID: 0}
+  ohmFormula: {fileID: 0}
+  ohmTriangle: {fileID: 0}
+  startMarker: {fileID: 0}
+  voltageMarker: {fileID: 0}
+  currentMarker: {fileID: 0}
+  resistorMarker: {fileID: 0}
+  exampleCircuit1: {fileID: 0}
+  exampleCircuit1EQU: {fileID: 0}
+  currentEQU: {fileID: 0}
+  voltageEQU: {fileID: 0}
+  resistanceEQU: {fileID: 0}
 --- !u!4 &1442866508
 Transform:
   m_ObjectHideFlags: 0
@@ -8875,9 +8889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '10k
-
-'
+  m_Text: "10K\u03A9\n"
 --- !u!222 &1991613748
 CanvasRenderer:
   m_ObjectHideFlags: 0

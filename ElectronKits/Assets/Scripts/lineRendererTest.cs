@@ -810,10 +810,10 @@ public class lineRendererTest : MonoBehaviour
 	{
 
 		showVoltageValue.text = batteryVoltsValue.ToString() + "V";
-		showResistanceValue.text = resistorValue_Counter.ToString() + "k";
+		showResistanceValue.text = resistorValue_Counter.ToString() + "KΩ";
 		showCurrentValue.text = currentValue.ToString() + "A";
-		showCounterText.text = resistorValue_Counter.ToString() + "k";
-		showBatteryVolts.text = batteryVoltsValue.ToString() + "v";
+		showCounterText.text = resistorValue_Counter.ToString() + "KΩ";
+		showBatteryVolts.text = batteryVoltsValue.ToString() + "V";
 		humanCurrentValue.text = currentValue.ToString() + "A";
 
 	}
