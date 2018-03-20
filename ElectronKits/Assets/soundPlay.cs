@@ -11,6 +11,7 @@ public class soundPlay : MonoBehaviour
 
 private GameObject correctText, wrongText;
 
+
 	// Use this for initialization
 	void Start()
 	{

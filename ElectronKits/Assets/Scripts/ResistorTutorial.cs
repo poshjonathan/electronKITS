@@ -34,9 +34,17 @@ public class ResistorTutorial : MonoBehaviour
 
 	private static bool onKresistorTracker;
 
-	public GameObject exampleCircuit1,exampleCircuit1EQU;
+	public GameObject exampleCircuit1, exampleCircuit1EQU;
 
 	public GameObject currentEQU, voltageEQU, resistanceEQU;
+
+	public GameObject goIntructions;
+	public Button helpBtn, closHelpBtn, closeHelpCurrentBtn,closeHelpVoltageBtn;
+
+public GameObject exampleCircuit2, exampleCircuit2EQU;
+
+	public GameObject helpCurrentBtn, goHelpCurrentPanel;
+public GameObject helpVoltageBtn, goHelpVoltagePanel;
 
 	void Start()
 	{
@@ -75,8 +83,24 @@ public class ResistorTutorial : MonoBehaviour
 		exampleCircuit1EQU.SetActive(false);
 
 		currentEQU.SetActive(false);
-voltageEQU.SetActive(false);
-resistanceEQU.SetActive(false);
+		voltageEQU.SetActive(false);
+		resistanceEQU.SetActive(false);
+
+		goIntructions.SetActive(false);
+
+			exampleCircuit2.SetActive(false);
+		exampleCircuit2EQU.SetActive(false);
+
+		helpCurrentBtn.SetActive(false);
+		helpVoltageBtn.SetActive(false);
+
+		goHelpCurrentPanel.SetActive(false);
+		goHelpVoltagePanel.SetActive(false);
+
+		helpBtn.onClick.AddListener( TaskOnHelpClick);
+closHelpBtn.onClick.AddListener( TaskOnCloseHelpClick);
+		closeHelpCurrentBtn.onClick.AddListener( TaskOnCloseHelpCurrentClick);
+closeHelpVoltageBtn.onClick.AddListener( TaskOnCloseHelpVoltageClick);
 
 
 	}
@@ -154,45 +178,74 @@ resistanceEQU.SetActive(false);
 
 			}
 
-			if (paraIndex < 16 || paraIndex > 35)
+			if (paraIndex < 16 || paraIndex > 34)
 			{
 				ohmTriangle.SetActive(false);
 
 			}
-			if (paraIndex < 24)
+			if (paraIndex < 24 ||paraIndex >28)
 			{
 
 				exampleCircuit1.SetActive(false);
 
 
+
 			}
-				if (paraIndex < 28)
+			if (paraIndex < 28 ||paraIndex >28 )
 			{
 
 				exampleCircuit1EQU.SetActive(false);
 
+			}
+
+			if (paraIndex < 30 ||paraIndex >34)
+			{
+
+				exampleCircuit2.SetActive(false);
+
+
+
+			}
+			if (paraIndex < 34 ||paraIndex >34 )
+			{
+
+				exampleCircuit1EQU.SetActive(false);
 
 			}
 
-			if (paraIndex != 19)
+			if (paraIndex < 19)
 			{
 
 				voltageEQU.SetActive(false);
 
 			}
-			if (paraIndex <21)
+
+			if (paraIndex  >19 && paraIndex<32)
+			{
+
+				voltageEQU.SetActive(false);
+
+			}
+
+			if (paraIndex  >34 )
+			{
+
+				voltageEQU.SetActive(false);
+
+			}
+			if (paraIndex < 21)
 			{
 
 				currentEQU.SetActive(false);
 
 			}
-			if (paraIndex >21 && paraIndex<26)
+			if (paraIndex > 21 && paraIndex < 26)
 			{
 
 				currentEQU.SetActive(false);
 
 			}
-				if (paraIndex >27)
+			if (paraIndex > 27)
 			{
 
 				currentEQU.SetActive(false);
@@ -203,6 +256,14 @@ resistanceEQU.SetActive(false);
 			{
 
 				resistanceEQU.SetActive(false);
+
+			}
+
+				if (paraIndex < 24 ||paraIndex==29 || paraIndex>34)
+			{
+
+				helpCurrentBtn.SetActive(false);
+				helpVoltageBtn.SetActive(false);
 
 			}
 
@@ -365,30 +426,79 @@ resistanceEQU.SetActive(false);
 			showParagraph.text = "14. This is a simple circuit\nwith a battery &\na resistor.";
 
 		}
-			if (paraIndex == 25)
+		if (paraIndex == 25)
 		{
 
 			showParagraph.text = "15. Battery is 12V &\nresistor is 600Ω.\nHow much current flows\nthrough the circuit?";
 
 		}
-			if (paraIndex == 26)
+		if (paraIndex == 26)
 		{
 
 			showParagraph.text = "16. To find the amount of\ncurrent, place your hand\nover I. Then you’ll see\nthe V over the R:";
 
 		}
-			if (paraIndex == 27)
+		if (paraIndex == 27)
 		{
 
 			showParagraph.text = "17. Try to find the current\nyourself!\nPress next for the anwser!";
 
 		}
-					if (paraIndex == 28)
+		if (paraIndex == 28)
 		{
 
 			showParagraph.text = "18. So the current in\nthe circuit is 0.02A!";
 
 		}
+			if (paraIndex == 29)
+		{
+
+			showParagraph.text = "19. Let's try another\nquestion!";
+
+		}
+		if (paraIndex == 30)
+		{
+
+			showParagraph.text = "20. This time let's find\nthe voltage!";
+
+		}
+
+			if (paraIndex == 31)
+		{
+
+			showParagraph.text = "21. The resistance of the resistor\nis 600 Ohm.\nWhat is the voltage\nof the battery?";
+
+		}
+		if (paraIndex == 32)
+		{
+
+			showParagraph.text = "22. To find the amount of\nvoltage, place your hand\nover V. Then you’ll see\nthe I multiple by R:";
+
+		}
+		if (paraIndex == 33)
+		{
+
+			showParagraph.text = "23. Try to find the voltage\nyourself!\nPress next for the anwser!";
+
+		}
+
+		if (paraIndex == 34)
+		{
+
+			showParagraph.text = "24. So the voltage of the\nbattery is 1.8V!";
+
+		}
+			if (paraIndex == 35)
+		{
+
+			showParagraph.text = "<color=red>With that we have come\nto an end of this resistor\ntutorial! I hope " +
+				"that you\nnow have a better \nunderstanding the\nfunctionality of a \nresistor and Ohm's Law \ncalculation!</color>";
+
+		}
+
+
+
+
 
 
 
@@ -548,7 +658,7 @@ resistanceEQU.SetActive(false);
 	{
 
 
-		if (paraIndex >= 16 && paraIndex <= 35)
+		if (paraIndex >= 16 && paraIndex <= 34)
 		{
 
 			ohmTriangle.SetActive(true);
@@ -559,10 +669,10 @@ resistanceEQU.SetActive(false);
 	}
 	public void showHand()
 	{
-		if (paraIndex < 18 || paraIndex==24)
+		if (paraIndex < 18 || paraIndex == 24 ||paraIndex==29||paraIndex>34)
 		{
 
-			hand.transform.position = Vector3.MoveTowards(hand.transform.position, startMarker.transform.position, 1f);
+			hand.transform.position = Vector3.MoveTowards(hand.transform.position, startMarker.transform.position, 2f);
 			if (hand.transform.position == startMarker.transform.position)
 			{
 
@@ -596,6 +706,12 @@ resistanceEQU.SetActive(false);
 			hand.transform.position = Vector3.MoveTowards(hand.transform.position, currentMarker.transform.position, 1f);
 
 		}
+			if (paraIndex == 32)
+		{
+			hand.SetActive(true);
+			hand.transform.position = Vector3.MoveTowards(hand.transform.position, voltageMarker.transform.position, 1f);
+
+		}
 
 
 
@@ -606,10 +722,11 @@ resistanceEQU.SetActive(false);
 	{
 
 
-		if (paraIndex >= 24)
+		if (paraIndex >= 24 && paraIndex<=28)
 		{
 
-
+			helpCurrentBtn.SetActive(true);
+			helpVoltageBtn.SetActive(true);
 			exampleCircuit1.SetActive(true);
 
 			if (paraIndex == 28)
@@ -622,6 +739,23 @@ resistanceEQU.SetActive(false);
 			}
 		}
 
+		if (paraIndex >= 30 && paraIndex<=34)
+		{
+
+			helpCurrentBtn.SetActive(true);
+			helpVoltageBtn.SetActive(true);
+			exampleCircuit2.SetActive(true);
+
+			if (paraIndex == 34)
+			{
+
+
+
+				exampleCircuit2EQU.SetActive(true);
+
+			}
+		}
+
 
 
 	}
@@ -629,13 +763,13 @@ resistanceEQU.SetActive(false);
 	public void showEQU()
 	{
 
-		if (paraIndex == 19)
+		if (paraIndex == 19 ||(paraIndex>=32 && paraIndex<=34))
 		{
 
 			voltageEQU.SetActive(true);
 
 		}
-		if (paraIndex == 21||paraIndex==26 ||paraIndex==27)
+		if (paraIndex == 21 || paraIndex == 26 || paraIndex == 27)
 		{
 
 			currentEQU.SetActive(true);
@@ -672,6 +806,8 @@ resistanceEQU.SetActive(false);
 
 		showExample();
 
+		nextBtn.interactable = true;
+
 		//showResistorVideoNarrow();
 	}
 
@@ -694,10 +830,42 @@ resistanceEQU.SetActive(false);
 		//showResistorVideoNarrow();
 		showOhmFormula();
 		showOhmTriangle();
-            showExample();
+		showExample();
 		showEQU();
 
 		backBtn.interactable = true;
+		if (paraIndex == 35)
+		{
+
+			nextBtn.interactable = false;
+
+		}
 
 	}
+
+
+	void TaskOnHelpClick()
+	{
+
+		goIntructions.SetActive(true);
+
+	}
+void TaskOnCloseHelpClick()
+{
+
+		goIntructions.SetActive(false);
+	}
+
+	void TaskOnCloseHelpCurrentClick()
+	{
+		goHelpCurrentPanel.SetActive(false);
+
+	}
+
+	void TaskOnCloseHelpVoltageClick()
+	{
+		goHelpVoltagePanel.SetActive(false);
+
+	}
+
 }

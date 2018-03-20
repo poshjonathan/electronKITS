@@ -79,10 +79,15 @@ public class lineRendererTest : MonoBehaviour
 
 	public AudioSource overcurrentSpeech;
 
+	public Button helpBtn, closHelpBtn;
+	public GameObject goIntructions;
+
+
+
 	// Use this for initialization
 	void Start()
 	{
-		
+
 		BulbResistorline = GameObject.Find("BulbResistor");
 		BRline = BulbResistorline.AddComponent<LineRenderer>();
 		BRline.enabled = false;
@@ -157,21 +162,28 @@ public class lineRendererTest : MonoBehaviour
 		playBtn.image.sprite = playSprite;
 
 		explainPanel.SetActive(false);
-	
+
 		if (overcurrentSpeech.isPlaying)
 		{
 			overcurrentSpeech.Stop();
 		}
-	
 
+
+
+		goIntructions.SetActive(false);
+
+		helpBtn.onClick.AddListener(TaskOnHelpClick);
+		closHelpBtn.onClick.AddListener(TaskOnCloseHelpClick);
 
 		//Click listener
-			increaseBtn.onClick.AddListener(TaskOnIncreaseClick);
+		increaseBtn.onClick.AddListener(TaskOnIncreaseClick);
 		decreaseBtn.onClick.AddListener(TaskOnDecreaseClick);
 		playBtn.onClick.AddListener(TaskOnPlayClick);
 		particleTriggerBtn.onClick.AddListener(TaskOnParticleTriggerPlayClick);
 		increaseVoltsBtn.onClick.AddListener(TaskOnIncreaseVoltsClick);
 		decreaseVoltsBtn.onClick.AddListener(TaskOnDecreaseVoltsClick);
+
+
 
 
 	}
@@ -464,7 +476,7 @@ public class lineRendererTest : MonoBehaviour
 			if (resistorValue_Counter.Equals(0))
 			{
 				bulbLighting.enabled = false;
-                 
+
 			}
 			else
 			{
@@ -688,12 +700,12 @@ public class lineRendererTest : MonoBehaviour
 
 		updateAllValues();
 		calucalateCurrent();
-	
 
 
 
-			
-	
+
+
+
 
 	}
 
@@ -733,7 +745,7 @@ public class lineRendererTest : MonoBehaviour
 		resistorValue_Counter = resistorValue_Counter - 5;
 		bulbElements++;
 
-		if (resistorValue_Counter <=0)
+		if (resistorValue_Counter <= 0)
 		{
 			overcurrentSpeech.Play();
 
@@ -743,10 +755,10 @@ public class lineRendererTest : MonoBehaviour
 			//disable increasebutton here
 			decreaseBtn.interactable = false;
 
-               showExplosion();
-            StartCoroutine(overcurrentFlash());
+			showExplosion();
+			StartCoroutine(overcurrentFlash());
 
-               
+
 		}
 
 		else
@@ -830,7 +842,7 @@ public class lineRendererTest : MonoBehaviour
 		yield return new WaitForSeconds(time);
 
 		// Code to execute after the delay
-	
+
 		explosionEffect.Stop();
 	}
 
@@ -839,9 +851,9 @@ public class lineRendererTest : MonoBehaviour
 
 		explosionEffect.Play();
 
-			//Set Delay
+		//Set Delay
 		StartCoroutine(ExecuteAfterTime_explosion(3f));
-			
+
 	}
 
 
@@ -873,6 +885,19 @@ public class lineRendererTest : MonoBehaviour
 			overcurrentText.text = "O V E R C U R R E N T";
 			yield break;
 		}
+
+	}
+
+	void TaskOnCloseHelpClick()
+	{
+
+		goIntructions.SetActive(false);
+	}
+
+	void TaskOnHelpClick()
+	{
+
+		goIntructions.SetActive(true);
 
 	}
 }

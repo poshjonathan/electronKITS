@@ -20,6 +20,7 @@ a9ceaad7d51aada88335b5bf9c0e71a4 Assembly-CSharp.dll:Vuforia.ReconstructionBehav
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.TurnOffBehaviour
 564d16955e3c1b82f2ce70912bbf22b8 Assembly-CSharp.dll:.FlickeringLight
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customSmallBulbTrackerScript
+9571b8b44b3c1150006d29e61263b431 Assembly-CSharp.dll:.OnOpenPanel
 1b1a7a1429d819e34ed7aa3c4e9f5fc3 Assembly-CSharp.dll:.Rotate
 7deab17ad862d9fac1398a9b58a21f6c Assembly-CSharp.dll:.LogicGateRound1
 6ecb193ec61da2dbca96cbd5d0cf827c Assembly-CSharp.dll:.LogicGateRound2
@@ -164,7 +165,7 @@ b7536247a550bc1596505b7f345c8adf Assembly-CSharp.dll:.GunAim
 d9bbd420256643c248b12b3ef71145bb Assembly-CSharp.dll:.SetCountDown
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customAndGateTracker
 378152aff2ab89b1a7a6bbd21f1a9ffb Assembly-CSharp.dll:.LogicGateChallenge
-378152aff2ab89b1a7a6bbd21f1a9ffb Assembly-CSharp.dll:.LogicGateLineRender
+62ff7fb8d928712dc27226d67c229468 Assembly-CSharp.dll:.LogicGateLineRender
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customNorGateTracker
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.TurnOffWordBehaviour
 366357d6fb913c21f7abbd83e67dce2c Assembly-CSharp.dll:.GameManagerScript
@@ -174,7 +175,7 @@ bacd3fdf07fd8780e174b7c70df3ef9b Assembly-CSharp.dll:.vb5Band
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.ReconstructionFromTargetBehaviour
 f0c202fbd230af21af89ab934da9f2d4 Assembly-CSharp.dll:.VideoPlaybackBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:PolyToolkitInternal.model.util.BackgroundMain
-b6708ac8c82b3d7f9acaf91dd0bbea37 Assembly-CSharp.dll:.lineRendererTest
+5ba00900ec192295845a05a425f59ee4 Assembly-CSharp.dll:.lineRendererTest
 16d085e7a8d79f3e914f5319320a2f04 Assembly-CSharp.dll:.onClickOrInputAScript
 16d085e7a8d79f3e914f5319320a2f04 Assembly-CSharp.dll:.OnClickNorInputAScript
 a3b69f0a397fa8bdc16aac740c10d8a6 Assembly-CSharp.dll:.InstructionScript
@@ -206,7 +207,7 @@ df343383b9d2e96226a204a164f3994d Assembly-CSharp.dll:.DragMe
 126e0c4b92be2a291eba54ff9a4c216e Assembly-CSharp.dll:.colorPicker
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.DefaultTrackableEventHandler
 f67e4dccde37b3c42d067b6bf680c32e Assembly-CSharp.dll:Vuforia.TextRecoBehaviour
-58e2ca306ae96663c257b87a72243a8b Assembly-CSharp.dll:.ResistorTutorial
+7e5b16ce836007dd9cbcab5a66bccfcd Assembly-CSharp.dll:.ResistorTutorial
 2454f7dfccc444ff7669d45276f331ec Assembly-CSharp.dll:PolyToolkit.PtAssetObject
 9fb705dfdac198d680c44a5f61ade564 Assembly-CSharp.dll:Vuforia.customOrGateTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -246,3 +247,4 @@ bbbfd9e6b3ef79513cf1f54ca5a84e7e Assembly-CSharp.dll:.vb4Band
 16d085e7a8d79f3e914f5319320a2f04 Assembly-CSharp.dll:.OnClickNorInputBScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChangeColor
 7cac06ac0eaa7257b831c29e4455ce1b Assembly-CSharp.dll:Vuforia.VuforiaConfiguration
+b7b9e297f800fe0f4638dc0f1a0fcc69 Assembly-CSharp.dll:.helpScript

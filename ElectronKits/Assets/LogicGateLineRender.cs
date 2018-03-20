@@ -95,6 +95,10 @@ public class LogicGateLineRender : MonoBehaviour
 
 	public ParticleSystem orFireEffect,andFireEffect,norFireEffect;
 
+public Button helpBtn, closHelpBtn;
+public GameObject goIntructions;
+
+
 
 
 	// Use this for initialization
@@ -204,6 +208,11 @@ BattRline = BatteryResistorline.AddComponent<LineRenderer>();
 		increaseVoltsBtn.onClick.AddListener(TaskOnIncreaseVoltsClick);
 		decreaseVoltsBtn.onClick.AddListener(TaskOnDecreaseVoltsClick);
 */
+
+		goIntructions.SetActive(false);
+
+		helpBtn.onClick.AddListener(TaskOnHelpClick);
+		closHelpBtn.onClick.AddListener(TaskOnCloseHelpClick);
 
 	}
 
@@ -1202,6 +1211,18 @@ BattRline = BatteryResistorline.AddComponent<LineRenderer>();
 
 		bulbLighting.enabled = false;
 
+	}
+
+void TaskOnCloseHelpClick()
+{
+
+	goIntructions.SetActive(false);
+}
+
+void TaskOnHelpClick()
+{
+
+	goIntructions.SetActive(true);
 	}
 
 
