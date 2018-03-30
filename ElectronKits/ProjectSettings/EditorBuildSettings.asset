@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LogicGateChallengeScene.unity
     guid: 2c67b97d16de34dc0a70938780f1e937
+  - enabled: 1
+    path: Assets/InstructionsScene.unity
+    guid: 2906f8ecaa68f4ba59019bb41de268ab
   - enabled: 0
     path: 
     guid: 477e83965af2d4805aeebefc0159d680

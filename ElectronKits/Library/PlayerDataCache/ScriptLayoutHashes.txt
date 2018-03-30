@@ -155,8 +155,10 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.WireframeTrackableEventHandler
 092e1c07b3ea0b39f94c7cd7daac505b Assembly-CSharp.dll:Vuforia.MultiTargetBehaviour
 392c57436e624c37288c09d99f531624 Assembly-CSharp.dll:.vbNext
+b7b9e297f800fe0f4638dc0f1a0fcc69 Assembly-CSharp.dll:.helpScript
 66ee6ce0968b1fa679c5c06187b8e23f Assembly-CSharp.dll:Vuforia.VuforiaBehaviour
 3d1b89310e77c34bc0c8d7132231345c Assembly-CSharp.dll:Vuforia.WireframeBehaviour
+e2bbe24a60f2f2d98b588866c5c1a802 Assembly-CSharp.dll:.VideoInstructionScript
 b7536247a550bc1596505b7f345c8adf Assembly-CSharp.dll:.GunAim
 10c83f67a13ad55045c79b4c7ca51b7d Assembly-CSharp.dll:PolyToolkitInternal.PtSettings
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.DistortionRenderingBehaviour
@@ -247,4 +249,3 @@ bbbfd9e6b3ef79513cf1f54ca5a84e7e Assembly-CSharp.dll:.vb4Band
 16d085e7a8d79f3e914f5319320a2f04 Assembly-CSharp.dll:.OnClickNorInputBScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChangeColor
 7cac06ac0eaa7257b831c29e4455ce1b Assembly-CSharp.dll:Vuforia.VuforiaConfiguration
-b7b9e297f800fe0f4638dc0f1a0fcc69 Assembly-CSharp.dll:.helpScript

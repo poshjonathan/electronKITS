@@ -150,6 +150,7 @@
      <None Include="Assets\PolyToolkit\Internal\tbt\Shaders\Include\Brush.cginc" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+     <None Include="Assets\StreamingAssets\Vuforia\Image.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
@@ -173,7 +174,6 @@
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
      <None Include="Assets\PolyToolkit\Shaders\PolyToolkitPbrBlendDoubleSided.shader" />
-     <None Include="Assets\StreamingAssets\Vuforia\Image.xml" />
      <None Include="Assets\PolyToolkit\ThirdParty\Noise\Shaders\Noise.cginc" />
      <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />

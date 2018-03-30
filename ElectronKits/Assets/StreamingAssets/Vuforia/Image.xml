@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="InstructionTarget" size="10.000000 7.636364" />
     <ImageTarget name="NORgateCard" size="10.000000 7.083333" />
     <ImageTarget name="ANDgateCard" size="10.000000 7.352941" />
     <ImageTarget name="ORgateCard" size="10.000000 7.272727" />
