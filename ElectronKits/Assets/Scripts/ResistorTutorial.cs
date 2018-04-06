@@ -466,7 +466,7 @@ closeHelpVoltageBtn.onClick.AddListener( TaskOnCloseHelpVoltageClick);
 			if (paraIndex == 31)
 		{
 
-			showParagraph.text = "21. The resistance of the resistor\nis 600 Ohm.\nWhat is the voltage\nof the battery?";
+			showParagraph.text = "21. The resistance of the\nresistor is 600 Ohm.\nWhat is the voltage\nof the battery?";
 
 		}
 		if (paraIndex == 32)
@@ -749,9 +749,13 @@ closeHelpVoltageBtn.onClick.AddListener( TaskOnCloseHelpVoltageClick);
 			if (paraIndex == 34)
 			{
 
-
-
 				exampleCircuit2EQU.SetActive(true);
+
+			}
+			else
+			{
+
+				exampleCircuit2EQU.SetActive(false);
 
 			}
 		}
