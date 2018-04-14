@@ -184,7 +184,7 @@ public class lineRendererTest : MonoBehaviour
 		decreaseVoltsBtn.onClick.AddListener(TaskOnDecreaseVoltsClick);
 
 
-
+		batteryVoltsValue = 3f;
 
 	}
 
@@ -466,7 +466,7 @@ public class lineRendererTest : MonoBehaviour
 		{
 
 			var particleMain = bulbParticle.main;
-			particleMain.duration = 7;
+			//particleMain.duration = 7;
 			particleMain.loop = true;
 			particleMain.startLifetime = new ParticleSystem.MinMaxCurve(2f, 7f);
 			particleMain.startSize = new ParticleSystem.MinMaxCurve(0.1f, 0.5f);
@@ -663,6 +663,11 @@ public class lineRendererTest : MonoBehaviour
 			if (targetIndex == markers.Length)
 			{
 				targetIndex = 0;
+
+			}
+			if (batteryVoltsValue <= 0f) 
+			{
+				playStatus = false;
 			}
 
 			playBtn.image.sprite = pauseSprite;
@@ -810,6 +815,7 @@ public class lineRendererTest : MonoBehaviour
 			batteryElement = 0;
 			batteryVoltsValue = 0;
 			decreaseVoltsBtn.interactable = false;
+
 		}
 		else
 		{

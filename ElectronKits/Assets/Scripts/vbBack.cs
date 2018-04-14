@@ -1,40 +1,59 @@
 ﻿using UnityEngine;
 using Vuforia;
 
-public class vbBack : MonoBehaviour, IVirtualButtonEventHandler {
+public class vbBack : MonoBehaviour, IVirtualButtonEventHandler
+{
 
-	public static int paraReadIndex=0;
+	private int paraReadIndex;
 
 	private GameObject vb_Back;
-	public TextMesh showtext;
+	public TextMesh showtext, numText;
 
 	public static bool backBtn; // to transfer information to other script
 
 	bool currentstate_5;
+
+
+	private buttonManager getIndex;
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 
 		vb_Back = GameObject.Find("vbBack");
 		vb_Back.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
+
+		getIndex = GameObject.Find("buttonManagerObject").GetComponent<buttonManager>();
+
+		getIndex.paraIndex = 1;
 	}
-	
+
 	// Update is called once per frame
-	void Update () 
+	void Update()
 	{
-		
+		paraReadIndex = getIndex.paraIndex;
+		displayParagraph();
+
+
+		numText.text = paraReadIndex + " /4";
 	}
 
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb)
 	{
-		paraReadIndex = vbNext.paraReadIndex;//get latest paraIndex Value
-		paraReadIndex--;
-		displayParagraph();
-		vbNext.paraReadIndex = paraReadIndex;//update latest paraIndex Value
+
+
+		if (getIndex.paraIndex == 1)
+		{
+
+		}
+		else
+		{
+			getIndex.paraIndex--;
+		}
 	}
 
 	public void OnButtonReleased(VirtualButtonAbstractBehaviour vb)
 	{
-		}
+	}
 
 	public void displayParagraph()
 	{

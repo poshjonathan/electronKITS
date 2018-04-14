@@ -27,7 +27,7 @@ public class textBoxText : MonoBehaviour {
 			paraIndex--;
 			backBtn = false;
 		}
-*/
+
 		if (vbBack.paraReadIndex != paraIndex) 
 		{ 
 			paraIndex = vbBack.paraReadIndex;
@@ -40,7 +40,7 @@ public class textBoxText : MonoBehaviour {
 			//paraIndex++;
             displayParagraph();
 		}
-
+*/
 
 		
 	}
